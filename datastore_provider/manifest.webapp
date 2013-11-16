@@ -1,0 +1,27 @@
+{
+  "name": "Datastore Provider",
+  "description": "Datastore Provider",
+  "launch_path": "/index.html",
+  "developer": {
+    "name": "The Gaia Team",
+    "url": "https://github.com/mozilla-b2g/gaia"
+  },
+  "locales": {
+    "en-US": {
+      "name": "Datastore Provider",
+      "description": "Datastore Provider"
+    }
+  },
+  "default_locale": "en-US",
+  "icons": {
+    "128": "/style/icons/Blank.png"
+  },
+  "datastores-owned": {
+    "things": {
+      "description": "I provide things."
+    },
+    "whatchamacallit": {
+      "description": "I may also provide whatchamacallits."
+    }
+  }
+}
