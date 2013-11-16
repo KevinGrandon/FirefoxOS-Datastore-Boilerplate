@@ -6,6 +6,7 @@
     <script src="js/provider.js"></script>
     <link rel="stylesheet" type="text/css" href="/style/base.css">
     <link rel="stylesheet" type="text/css" href="/style/headers.css">
+    <link rel="stylesheet" type="text/css" href="/style/lists.css">
   </head>
   <body>
     <section role="region">
@@ -13,18 +14,24 @@
         <h1>Datastore Provider</h1>
       </header>
     </section>
-    <article>
-      <p>Current length: <span id="length"></span></p>
-      <p>
-        <h3>Add new record:</h3>
-        <form id="create" action="#">
-          <input type="text" name="title" id="record-name" placeholder="Robot Name">
-          <input type="submit" value="+ Add New Record">
-        </form>
-      </p>
-      <p>
-        <a href="#" id="clear-datastore">Clear datastore</a>
-      </p>
-    </article>
+    <section data-type="list">
+      <header>Current length: <span id="length"></span></header>
+      <ul>
+        <li>
+          <p>Add new record:</p>
+          <p>
+            <form id="create" action="#">
+              <input type="text" name="title" id="record-name" placeholder="Thing Name">
+              <input type="submit" value="+ Add New Record">
+            </form>
+          </p>
+        </li>
+        <li>
+          <p>
+            <a href="#" id="clear-datastore">Clear datastore</a>
+          </p>
+        </li>
+      </ul>
+    </section>
   </body>
 </html>

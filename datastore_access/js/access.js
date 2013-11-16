@@ -29,10 +29,10 @@
 		 
 		       case 'add':
 		         var newItemEl = document.createElement('li');
-		         newItemEl.innerHTML = task.data.name;
+		         newItemEl.innerHTML = '<p>' + task.data.name + '</p>';
 		         resultsEl.appendChild(newItemEl);
 		         break;
-		 
+
 		       case 'update':
 		         // Something has to be updated
 		         dump("Updating id: " + task.id + " data: " + task.data + "\n");
