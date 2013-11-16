@@ -3,13 +3,13 @@
  */
 (function() {
   navigator.getDataStores('things').then(function(stores) {
-    dump("DataStores called 'things': " + stores.length + "\n");
-    var datastore = stores[0];
+	dump("DataStores called 'things': " + stores.length + "\n");
+	var datastore = stores[0];
 
-    function updateCount() {
-	    datastore.getLength().then(function(length) {
-	    	document.getElementById('length').textContent = length;
-	    });
+	function updateCount() {
+		datastore.getLength().then(function(length) {
+			document.getElementById('length').textContent = length;
+		});
 	}
 	updateCount();
 
@@ -18,10 +18,10 @@
 		datastore.clear().then(updateCount);
 	});
 
-    document.getElementById('create').addEventListener('submit', function(e) {
-    	e.preventDefault();
+	document.getElementById('create').addEventListener('submit', function(e) {
+		e.preventDefault();
 
-    	var titleEl = document.getElementById('record-name');
+		var titleEl = document.getElementById('record-name');
 
 		datastore.add({
 			name: titleEl.value,
