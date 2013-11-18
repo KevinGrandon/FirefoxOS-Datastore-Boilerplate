@@ -11,7 +11,7 @@
 	resultsEl.addEventListener('click', function(e) {
 		if (e.target.classList.contains('delete')) {
 			console.log('REMOVING:', e.target.dataset.id);
-			datastore.remove(e.target.dataset.id).then(render);
+			datastore.remove(parseInt(e.target.dataset.id, 10)).then(render);
 		}
 	});
 

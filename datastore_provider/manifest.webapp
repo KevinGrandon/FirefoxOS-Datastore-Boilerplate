@@ -18,6 +18,7 @@
   },
   "datastores-owned": {
     "things": {
+      "access": "readwrite",
       "description": "I provide things."
     },
     "whatchamacallit": {
