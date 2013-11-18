@@ -6,16 +6,20 @@
 	dump("DataStores called 'things': " + stores.length + "\n");
 	var datastore = stores[0];
 
-	function updateCount() {
+	function render() {
 		datastore.getLength().then(function(length) {
 			document.getElementById('length').textContent = length;
 		});
 	}
-	updateCount();
+	render();
+
+	datastore.onchange = function() {
+		render();
+	}
 
 	document.getElementById('clear-datastore').addEventListener('click', function(e) {
 		e.preventDefault();
-		datastore.clear().then(updateCount);
+		datastore.clear().then(render);
 	});
 
 	document.getElementById('create').addEventListener('submit', function(e) {
@@ -29,7 +33,6 @@
 		}).then(function(newId) {
 			console.log('Created object with id: ' + newId + '\n');
 			titleEl.value = '';
-			updateCount();
 		});
 	});
   });

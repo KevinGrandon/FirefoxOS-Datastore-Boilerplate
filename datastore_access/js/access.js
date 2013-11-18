@@ -8,6 +8,13 @@
 
 	var resultsEl = document.getElementById('results');
 
+	resultsEl.addEventListener('click', function(e) {
+		if (e.target.classList.contains('delete')) {
+			console.log('REMOVING:', e.target.dataset.id);
+			datastore.remove(e.target.dataset.id).then(render);
+		}
+	});
+
 	function render() {
 		datastore.getLength().then(function(length) {
 			document.getElementById('length').textContent = length;
@@ -29,7 +36,7 @@
 		 
 			   case 'add':
 				 var newItemEl = document.createElement('li');
-				 newItemEl.innerHTML = '<p>' + task.data.name + '</p>';
+				 newItemEl.innerHTML = '<p>' + task.data.name + ' <a href="#" data-id="' + task.id + '" class="delete">delete</a></p>';
 				 resultsEl.appendChild(newItemEl);
 				 break;
 
